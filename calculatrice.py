@@ -56,6 +56,7 @@ def soustraction(number):
         i = i + 1
     return result
 
+
 def display_interface():
     choice = ask_user("""
     Tu veux :
@@ -78,5 +79,3 @@ def display_interface():
             choice = ask_user("Saisir un ciffre à MULTIPLIER ou clicker sur '=' ")
             result = division(choice)
         return print(f"Le resultat est ==> {result}")
-
-
