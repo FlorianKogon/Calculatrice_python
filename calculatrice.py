@@ -9,7 +9,7 @@ def addition(number):
         if number.isdigit():
             list_numbers.append(int(number))
         number = ask_user("Saisir un chiffre à additionner ou clicker sur '=' ")
-    result = sum(list_numbers)
+    result = sum(list_numbers) # calcul de la somme
     return result
 
 
@@ -65,7 +65,7 @@ def display_interface():
     3. Multiplier Tape 3
     4. Diviser Tape 4""")
     while choice.isdigit():
-        choice = int(choice)
+        choice = int(choice) #conversion en entier
         if choice == 1:
             choice = ask_user("Saisir un chiffre à ADDITIONNER ou clicker sur '=' ")
             result = addition(choice)
