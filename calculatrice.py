@@ -3,7 +3,7 @@ def ask_user(sentence = "Saisir un chiffre"):
     return choice
 
 
-def Addition(number): # do_something
+def addition(number): # do_something
     list_numbers = []
     while number.isdigit():
         if number.isdigit():
