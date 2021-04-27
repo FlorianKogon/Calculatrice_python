@@ -41,7 +41,6 @@ def soustraction(number):
 
 
 def calcultate(list_numbers, operator):
-    print(list_numbers)
     for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
         if index == 0:
             result = list_number
