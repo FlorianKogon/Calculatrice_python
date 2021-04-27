@@ -9,7 +9,7 @@ def addition(number):
         if number.isdigit():
             list_numbers.append(int(number))
         number = ask_user("Saisir un chiffre à additionner ou clicker sur '=' ")
-    result = sum(list_numbers) # calcul de la somme
+    result = sum(list_numbers)  # calcul de la somme
     return result
 
 
@@ -17,43 +17,41 @@ def multplication(number):
     list_numbers = []
     while number.isdigit():
         if number.isdigit():
-            list_numbers.append(int(number)) # conversion en entier
+            list_numbers.append(int(number))  # conversion en entier
         number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
-    for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
-        if index == 0:
-            result = list_number
-        else:
-            result *= list_number
-    return result
+    return calcultate(list_numbers, "multiplier")
 
 
 def division(number):
     list_numbers = []
     while number.isdigit():
         if number.isdigit():
-            list_numbers.append(int(number)) #conversion en entier
+            list_numbers.append(int(number))  # conversion en entier
         number = ask_user("Saisir un chiffre à diviser ou clicker sur '=' ")
-    for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
-        if index == 0:
-            result = list_number
-        else:
-            result /= list_number
-    return result
+    return calcultate(list_numbers, "diviser")
 
 
 def soustraction(number):
     list_numbers = []
-    while number.isdigit(): # do_something
+    while number.isdigit():  # do_something
         if number.isdigit():
-            list_numbers.append(int(number)) #conversion en int
+            list_numbers.append(int(number))  # conversion en int
         number = ask_user("Saisir un chiffre à soustraire ou clicker sur '=' ")
-    i = 0
-    for list_number in list_numbers:
-        if i == 0:
+    return calcultate(list_numbers, "soustraire")
+
+
+def calcultate(list_numbers, operator):
+    print(list_numbers)
+    for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
+        if index == 0:
             result = list_number
         else:
-            result -= list_number
-        i += 1
+            if operator == "soustraire":
+                result -= list_number
+            elif operator == "multiplier":
+                result *= list_number
+            elif operator == "diviser":
+                result /= list_number
     return result
 
 
