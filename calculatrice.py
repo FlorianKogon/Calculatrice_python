@@ -1,15 +1,15 @@
-def ask_user(sentence = "Saisir un chiffre"):
-    choice = input(f"""{sentence}\n>""")
+def ask_user(sentence):
+    choice = input(sentence + "\n>")
     return choice
 
 
-def addition(number): # do_something
+def addition(number):
     list_numbers = []
     while number.isdigit():
         if number.isdigit():
             list_numbers.append(int(number))
         number = ask_user("Saisir un chiffre à additionner ou clicker sur '=' ")
-    result = list_numbers # do_something
+    result = sum(list_numbers)
     return result
 
 
@@ -17,13 +17,13 @@ def multplication(number):
     list_numbers = []
     while number.isdigit():
         if number.isdigit():
-            list_numbers.append(number) # do_something
+            list_numbers.append(int(number))
         number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
     for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
-        if index == '0': # do_something
+        if index == 0:
             result = list_number
         else:
-            result = result / list_number # do_something
+            result *= list_number
     return result
 
 
@@ -31,29 +31,29 @@ def division(number):
     list_numbers = []
     while number.isdigit():
         if number.isdigit():
-            list_numbers.append(number) # do_something
-        number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
+            list_numbers.append(int(number))
+        number = ask_user("Saisir un chiffre à diviser ou clicker sur '=' ")
     for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
         if index == 0:
             result = list_number
         else:
-            result = result + list_number # do_something
+            result /= list_number
     return result
 
 
 def soustraction(number):
     list_numbers = []
-    while number.isdigit: # do_something
+    while number.isdigit():
         if number.isdigit():
-            list_numbers.append(number) # do_something
-        number = ask_user("Saisir un chiffre à additionner ou clicker sur '=' ")
+            list_numbers.append(int(number))
+        number = ask_user("Saisir un chiffre à soustraire ou clicker sur '=' ")
     i = 0
     for list_number in list_numbers:
         if i == 0:
             result = list_number
         else:
-            result = result - list_number
-        i = i + 1
+            result -= list_number
+        i += 1
     return result
 
 
@@ -76,6 +76,6 @@ def display_interface():
             choice = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
             result = multplication(choice)
         elif choice == 4:
-            choice = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
+            choice = ask_user("Saisir un chiffre à DIVISER ou clicker sur '=' ")
             result = division(choice)
         return print(f"Le resultat est ==> {result}")
