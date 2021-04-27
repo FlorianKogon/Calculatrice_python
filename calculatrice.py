@@ -8,7 +8,7 @@ def addition(number): # do_something
     while number.isdigit():
         if number.isdigit():
             list_numbers.append(int(number))
-        number = ask_user("Saisir un ciffre à additionner ou clicker sur '=' ")
+        number = ask_user("Saisir un chiffre à additionner ou clicker sur '=' ")
     result = list_numbers # do_something
     return result
 
@@ -18,7 +18,7 @@ def multplication(number):
     while number.isdigit():
         if number.isdigit():
             list_numbers.append(number) # do_something
-        number = ask_user("Saisir un ciffre à multiplier ou clicker sur '=' ")
+        number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
     for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
         if index == '0': # do_something
             result = list_number
@@ -32,7 +32,7 @@ def division(number):
     while number.isdigit():
         if number.isdigit():
             list_numbers.append(number) # do_something
-        number = ask_user("Saisir un ciffre à multiplier ou clicker sur '=' ")
+        number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
     for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
         if index == 0:
             result = list_number
@@ -46,7 +46,7 @@ def soustraction(number):
     while number.isdigit: # do_something
         if number.isdigit():
             list_numbers.append(number) # do_something
-        number = ask_user("Saisir un ciffre à additionner ou clicker sur '=' ")
+        number = ask_user("Saisir un chiffre à additionner ou clicker sur '=' ")
     i = 0
     for list_number in list_numbers:
         if i == 0:
@@ -65,17 +65,17 @@ def display_interface():
     3. Multiplier Tape 3
     4. Diviser Tape 4""")
     while choice.isdigit():
-        choice = choice # do_something
+        choice = int(choice)
         if choice == 1:
-            choice = ask_user("Saisir un ciffre à ADDITIONNER ou clicker sur '=' ")
+            choice = ask_user("Saisir un chiffre à ADDITIONNER ou clicker sur '=' ")
             result = addition(choice)
         elif choice == 2:
-            choice = ask_user("Saisir un ciffre à SOUSTRAIRE ou clicker sur '=' ")
+            choice = ask_user("Saisir un chiffre à SOUSTRAIRE ou clicker sur '=' ")
             result = soustraction(choice)
         elif choice == 3:
-            choice = ask_user("Saisir un ciffre à MULTIPLIER ou clicker sur '=' ")
+            choice = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
             result = multplication(choice)
         elif choice == 4:
-            choice = ask_user("Saisir un ciffre à MULTIPLIER ou clicker sur '=' ")
+            choice = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
             result = division(choice)
         return print(f"Le resultat est ==> {result}")
