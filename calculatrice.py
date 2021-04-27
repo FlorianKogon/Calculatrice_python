@@ -31,13 +31,13 @@ def division(number):
     list_numbers = []
     while number.isdigit():
         if number.isdigit():
-            list_numbers.append(number) # do_something
-        number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
+            list_numbers.append(int(number)) # do_something
+        number = ask_user("Saisir un chiffre à diviser ou clicker sur '=' ")
     for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
         if index == 0:
             result = list_number
         else:
-            result = result + list_number # do_something
+            result = result / list_number #diviser
     return result
 
 
@@ -75,7 +75,7 @@ def display_interface():
             choice = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
             result = multplication(choice)
         elif choice == 4:
-            choice = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
+            choice = ask_user("Saisir un chiffre à diviser ou clicker sur '=' ")
             result = division(choice)
         return print(f"Le resultat est ==> {result}")
 
