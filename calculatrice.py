@@ -1,5 +1,5 @@
-def ask_user(sentence): #Majuscule
-    choice = input(f"""{sentence}\n>""")
+def ask_user(sentence):
+    choice = input(sentence + "\n>")
     return choice
 
 
@@ -20,10 +20,10 @@ def multplication(number):
             list_numbers.append(int(number)) # conversion en entier
         number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
     for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
-        if index == 0 : #Int
+        if index == 0:
             result = list_number
         else:
-            result = result * list_number # do_something
+            result *= list_number
     return result
 
 
@@ -37,7 +37,7 @@ def division(number):
         if index == 0:
             result = list_number
         else:
-            result = result / list_number #diviser
+            result /= list_number
     return result
 
 
@@ -52,9 +52,10 @@ def soustraction(number):
         if i == 0:
             result = list_number
         else:
-            result = result - list_number
-        i = i + 1
+            result -= list_number
+        i += 1
     return result
+
 
 def display_interface():
     choice = ask_user("""
@@ -75,8 +76,6 @@ def display_interface():
             choice = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
             result = multplication(choice)
         elif choice == 4:
-            choice = ask_user("Saisir un chiffre à diviser ou clicker sur '=' ")
+            choice = ask_user("Saisir un chiffre à DIVISER ou clicker sur '=' ")
             result = division(choice)
         return print(f"Le resultat est ==> {result}")
-
-
