@@ -3,7 +3,7 @@ def ask_user(sentence):
     return choice
 
 
-def initiate_calculating(number, operation):
+def calculate(number, operation):
     list_numbers = []
     while number.isdigit():
         if number.isdigit():
@@ -35,14 +35,14 @@ def display_interface():
         choice = int(choice) #conversion en entier
         if choice == 1:
             choice = ask_user("Saisir un chiffre à ADDITIONNER ou clicker sur '=' ")
-            result = initiate_calculating(choice, "additionner")
+            result = calculate(choice, "additionner")
         elif choice == 2:
             choice = ask_user("Saisir un chiffre à SOUSTRAIRE ou clicker sur '=' ")
-            result = initiate_calculating(choice, "soustraire")
+            result = calculate(choice, "soustraire")
         elif choice == 3:
             choice = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
-            result = initiate_calculating(choice, "multiplier")
+            result = calculate(choice, "multiplier")
         elif choice == 4:
             choice = ask_user("Saisir un chiffre à DIVISER ou clicker sur '=' ")
-            result = initiate_calculating(choice, "diviser")
+            result = calculate(choice, "diviser")
         return print(f"Le resultat est ==> {result}")
